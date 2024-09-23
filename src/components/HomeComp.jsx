@@ -49,6 +49,7 @@ function HomeComp() {
 
   const openModal = (smsArray) => {
     setSelectedLeadSms(smsArray); // Set the SMS data for the selected lead
+    
     navigate("/viewSms", { state: smsArray });
   };
 
