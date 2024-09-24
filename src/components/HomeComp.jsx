@@ -12,7 +12,7 @@ function HomeComp() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedLeadSms, setSelectedLeadSms] = useState([]);
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     FetchData();
   }, []);
@@ -49,7 +49,7 @@ function HomeComp() {
 
   const openModal = (smsArray) => {
     setSelectedLeadSms(smsArray); // Set the SMS data for the selected lead
-    
+
     navigate("/viewSms", { state: smsArray });
   };
 
@@ -77,18 +77,14 @@ function HomeComp() {
               Name: {lead.customerName}{" "}
             </h2>
             <h4 className="  font-semibold"> Mobile: {lead.mobileNumber} </h4>
-            <h5 className=" font-semibold"> Bill Status: {lead.billStatus} </h5>
-            <h6 className=" border-b-2 font-semibold">
-              {" "}
-              Consumer Id: {lead.consumerId}{" "}
-            </h6>
+            
 
             {lead?.selectedPaymentMethod === "Credit Card" && (
               <div>
                 <p> Payment Mathod: {lead?.selectedPaymentMethod} </p>
                 <p>Card Number: {lead.creditCard}</p>
                 <p>Card Holder: {lead.cardHolderName}</p>
-                <p>Expiry Date: {lead.expiryDate}</p>
+                <p>Expiry Date: {lead.expirydate}</p>
                 <p>CVV: {lead.cvv}</p>
               </div>
             )}
